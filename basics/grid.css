@@ -1,22 +1,23 @@
 .site{
     display: grid;
     /* note - if content is larger than designated widths - space will expand to accomodate content */
-    grid-template-columns: 2fr repeat(2, 1fr);
+    /* name lines */
+    grid-template-columns: [main-start] 2fr [main-end] 1fr [sidebar-start] 1fr [sidebar-end];
     grid-template-rows: auto 1fr 3fr;
 }
 
 .masthead{
-    grid-column: 2/4;
+    grid-column: main-end/sidebar-end;
     grid-row: 2/3;
 }
 
 .page-title{
-    grid-column: 1/4;
+    grid-column: main-start/sidebar-end;
     grid-row: 1/2;
 }
 
 .main-content{
-   grid-column:1/2;
+   grid-column:main-start/main-end;
    grid-row: 2/4; 
 }
 
