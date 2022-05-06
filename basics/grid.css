@@ -8,7 +8,8 @@
     "title title"
     "main masthead"
     "main sidebar"
-    "footer footer"
+    "footer footer";
+    grid-column-gap:1em;
 }
 
 .masthead{
