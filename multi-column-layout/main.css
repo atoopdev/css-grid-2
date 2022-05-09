@@ -298,6 +298,7 @@ CSS Grid layout for modern browsers:
 --------------------------------------------------------------*/
 /* check modern grid is supported - testing for new feature*/
 @supports (grid-area: auto) {
+  /* medium width screens */
   @media screen and (min-width: 50em) {
     .site {
       max-width: none;
@@ -307,6 +308,7 @@ CSS Grid layout for modern browsers:
 
     .masthead {
       grid-column: 1/2;
+      grid-row: 1/3;
     }
     /* feature image */
     .feature {
@@ -325,4 +327,21 @@ CSS Grid layout for modern browsers:
       grid-column: 1/3;
     }
   }
+  /* end 50em */
+
+  @media screen and (min-width: 65em) {
+    .site {
+      grid-template-columns: 15em auto 15em;
+    }
+
+    .sidebar {
+      grid-column: 3/4;
+      grid-row: 1/3;
+    }
+
+    .colophon {
+      grid-column: 1/4;
+    }
+  }
+  /* end 65em */
 }
