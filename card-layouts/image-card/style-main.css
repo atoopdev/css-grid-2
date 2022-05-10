@@ -217,11 +217,31 @@ CSS Grid layout for wider screens, when browser supports grid:
       grid-column: 1;
       grid-row: 1;
     }
+
+    /* move caption to bottom of card */
+    .caption {
+      display: flex;
+      align-items: flex-end;
+      /* hide text and colored overlay from normal view */
+      opacity: 0;
+    }
+    /* on hover-over see text and overlay */
+    a:focus .caption,
+    a:hover .caption {
+      opacity: 1;
+      background: hsla(246, 40%, 30%, 0.6);
+    }
   }
 
   @media screen and (min-width: 60em) {
     .cards {
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* apply to any image to make span 2 row 2 cols */
+    .double {
+      grid-column: span 2;
+      grid-row: span 2;
     }
   }
 }
