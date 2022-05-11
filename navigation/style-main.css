@@ -293,7 +293,7 @@ CSS Grid layout for wider screens, when browser supports grid:
 @supports (grid-area: auto) {
 
 	@media screen and (min-width: 27em) {
-
+		/* nav is not included here because we will display on top using grid lines */
 		.site{
 			display: grid;
 			grid-template-areas:
@@ -317,6 +317,32 @@ CSS Grid layout for wider screens, when browser supports grid:
 
 		.colophon{
 			grid-area: footer;
+		}
+		/* pops nav into place but is displaying below other content */
+		.main-nav{
+			/* use position and width to position on top and in correct location */
+			position: relative;
+			width: 12em;
+			/* position off screen for closed position */
+			left: -13em;
+			grid-column: 1;
+			grid-row: 1/5;
+		}
+		/* switch nav bar to vert column */
+		.main-nav ul{
+			flex-direction:column
+		}
+
+		/* make menu trigger button visible (hidden on smaller screens b/c vert menu not used */
+		.trigger{
+			display: block;
+			position: fixed;
+			/* manually position */
+			top: 1.5em;
+			/* closed position */
+			left: .2em;
+			/* open position */
+			/* left: 14.5em; */
 		}
 
 		.cards {
