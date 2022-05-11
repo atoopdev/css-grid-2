@@ -328,6 +328,15 @@ CSS Grid layout for wider screens, when browser supports grid:
 			grid-column: 1;
 			grid-row: 1/5;
 		}
+
+		.reveal .main-nav{
+			left: 0;
+		}
+
+		.reveal .trigger{
+			left: 14.5em;
+		}
+
 		/* switch nav bar to vert column */
 		.main-nav ul{
 			flex-direction:column
