@@ -339,7 +339,15 @@ CSS Grid layout for wider screens, when browser supports grid:
 
 		/* switch nav bar to vert column */
 		.main-nav ul{
+			/* keep menu in place when open but user is scrolling web page */
+			position: fixed;
+			display: none;
 			flex-direction:column
+		}
+
+		/* for accessibility access for keyboard navigation*/
+		.reveal .main-nav ul{
+			display: flex;
 		}
 
 		/* make menu trigger button visible (hidden on smaller screens b/c vert menu not used */
