@@ -296,11 +296,14 @@ CSS Grid layout for wider screens, when browser supports grid:
 
 		.site {
 			display: grid;
+			/* 15em is width of nav menu when open */
+			grid-template-columns:15em calc(100% - 1em);
+			/* add nav to each row */
 			grid-template-areas:
-				"header"
-				"main"
-				"sidebar"
-				"footer";
+				"nav header"
+				"nav main"
+				"nav sidebar"
+				"nav footer";
 		}
 
 		.masthead {
@@ -318,13 +321,15 @@ CSS Grid layout for wider screens, when browser supports grid:
 		.colophon {
 			grid-area: footer;
 		}
-
+		/* nav menu */
 		.main-nav {
-			position: relative;
+			/* comment out previous code */
+			/* position: relative;
 			width: 12em;
 			left: -13em;
 			grid-column: 1;
-			grid-row: 1/5;
+			grid-row: 1/5; */
+			grid-area: nav;
 		}
 
 		.reveal .main-nav {
@@ -401,11 +406,11 @@ CSS Grid layout for wider screens, when browser supports grid:
 	@media screen and (min-width: 78em) {
 
 		.site {
-			grid-template-columns: auto 15em;
+			grid-template-columns: 15em calc(100% - 16em) 15em;
 			grid-template-areas:
-				"header header"
-				"main sidebar"
-				"footer footer";
+				"nav header header"
+				"nav main sidebar"
+				"nav footer footer";
 		}
 	}
 
