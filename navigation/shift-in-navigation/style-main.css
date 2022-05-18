@@ -295,15 +295,25 @@ CSS Grid layout for wider screens, when browser supports grid:
 	@media screen and (min-width: 27em) {
 
 		.site {
+			position:relative;
+			left:-14em;
+			/* needed for sliding nav bar - gets rid of horiz scroll when nav menu opens */
+			overflow-x: hidden;
 			display: grid;
 			/* 15em is width of nav menu when open */
 			grid-template-columns:15em calc(100% - 1em);
 			/* add nav to each row */
+			/* this pushes all web content to right which is then corrected above with position relative and left -14em */
 			grid-template-areas:
 				"nav header"
 				"nav main"
 				"nav sidebar"
 				"nav footer";
+		}
+
+		/* used to toggle sidebar open */
+		.reveal{
+			left:0;
 		}
 
 		.masthead {
@@ -332,9 +342,10 @@ CSS Grid layout for wider screens, when browser supports grid:
 			grid-area: nav;
 		}
 
-		.reveal .main-nav {
+		/* used in prev design */
+		/* .reveal .main-nav {
 			left: 0;
-		}
+		} */
 
 		.main-nav ul {
 			position: fixed;
@@ -354,7 +365,7 @@ CSS Grid layout for wider screens, when browser supports grid:
 		}
 
 		.reveal .trigger {
-			left: 14.5em;
+			left: 14em;
 		}
 
 
